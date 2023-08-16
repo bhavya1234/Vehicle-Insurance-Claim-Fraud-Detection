@@ -1,0 +1,220 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Fraud Prediction Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            display: flex;
+            justify-content: space-between;
+        }
+        .left-column, .right-column {
+            width: 48%; 
+            padding: 10px;
+            box-sizing: border-box;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        select, input[type="text"] {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+        input[type="submit"] {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            float: right;
+        }
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <h2>Fraud Prediction Form</h2>
+    <form method="post" action="/predict">
+        <div class="container">
+            <div class="left-column">
+                <label for="Month">Month:</label>   
+                <select name="Month">
+                    <option value="">Choose an Option</option>
+                    <option value="Jan">January</option>
+                    <option value="Feb">February</option>
+                    <option value="Mar">March</option>
+                    <option value="Apr">April</option>
+                    <option value="May">May</option>
+                    <option value="Jun">June</option>
+                    <option value="Jul">July</option>
+                    <option value="Aug">August</option>
+                    <option value="Sep">September</option>
+                    <option value="Oct">October</option>
+                    <option value="Nov">November</option>
+                    <option value="Dec">December</option>
+
+                    <!-- Add other months -->
+                </select>
+                <label for="Make">Make:</label>
+                <select name="Make">
+                    <option value="">Choose an Option</option>
+                    <option value="Honda">Honda</option>
+                    <option value="Pontiac">Pontiac</option>
+                    <option value="Chevrolet">Chevrolet</option>
+                    <option value="Saturn">Saturn</option>
+                    <option value="Mazda">Mazda</option>
+                    <option value="Toyota">Toyota</option>
+                    <option value="BMW">BMW</option>
+                    <option value="Ford">Ford</option>
+                    <option value="VW">VW</option>
+                    <option value="Accura">Accura</option>
+                    <option value="Porche">Porche</option>
+                    <option value="Saab">Saab</option>
+                    <option value="Dodge">Dodge</option>
+                    <option value="Mercury">Mercury</option>
+                    <option value="Nisson">Nissan</option>
+                    <option value="Ferrari">Ferrari</option>
+                    <option value="Jaguar">Jaguar</option>
+                    <option value="Lexus">Lexus</option>
+                    <option value="Mecedes">Mercedes</option>
+                </select>
+                <label for="AccidentArea">Accident Area:</label>
+                <select name="AccidentArea">
+                    <option value="">Choose an Option</option>
+                    <option value="Urban">Urban</option>
+                    <option value="Rural">Rural</option>
+                </select>
+                <label for="Fault">Fault:</label>
+                <select name="Fault">
+                    <option value="">Choose an Option</option>
+                    <option value="Policy Holder">Policy Holder</option>
+                    <option value="Third Party">Third Party</option>
+                </select>
+                <label for="VehicleCategory">VehicleCategory :</label>
+                <select name="VehicleCategory">
+                    <option value="">Choose an Option</option>
+                    <option value="Sport">Sport</option>
+                    <option value="Sedan">Sedan</option>
+                    <option value="Utility">Utility</option>
+                </select>
+                <label for="VehiclePrice">VehiclePrice :</label>
+                <select name="VehiclePrice">
+                    <option value="">Choose an Option</option>
+                    <option value="more than 69000">more than 69000</option>
+                    <option value="20000 to 29000">20000 to 29000</option>
+                    <option value="30000 to 39000">30000 to 39000</option>
+                    <option value="40000 to 59000">40000 to 59000</option>
+                    <option value="less than 20000">less than 20000</option>
+                    <option value="60000 to 69000">60000 to 69000</option>
+                </select>
+                <label for="PastNumberOfClaims">PastNumberOfClaims :</label>
+                <select name="PastNumberOfClaims">
+                    <option value="">Choose an Option</option>
+                    <option value="none">none</option>
+                    <option value="1">1</option>
+                    <option value="2 to 4">2 to 4</option>
+                    <option value="more than 4">more than 4</option>
+                </select>
+                <label for="AgeOfVehicle">AgeOfVehicle :</label>
+                <select name="AgeOfVehicle">
+                    <option value="">Choose an Option</option>
+                    <option value="new">new</option>
+                    <option value="2 years">2 years</option>
+                    <option value="3 years">3 years</option>
+                    <option value="4 years">4 years</option>
+                    <option value="5 years">5 years</option>
+                    <option value="6 years">6 years</option>
+                    <option value="7 years">7 years</option>
+                    <option value="more than 7">more than 7</option>
+                </select>
+                <label for="PoliceReportFiled">PoliceReportFiled :</label>
+                <select name="PoliceReportFiled">
+                    <option value="">Choose an Option</option>
+                    <option value="Yes">Yes</option>
+                    <option value="No">No</option>
+                </select>
+
+
+                <!-- Add more fields for the left column -->
+            </div>
+            <div class="right-column">
+                <label for="Sex">Sex:</label>
+                <select name="Sex">
+                    <option value="">Choose an Option</option>
+                    <option value="Male">Male</option>
+                    <option value="Female">Female</option>
+                </select>
+
+                <label for="MaritalStatus">Marital Status:</label>
+                <select name="MaritalStatus">
+                    <option value="">Choose an Option</option>
+                    <option value="Single">Single</option>
+                    <option value="Married">Married</option>
+                    <option value="Divorced">Divorced</option>
+                    <option value="Widow">Widow</option>
+                </select>
+
+                <label for="Age">Age:</label>
+                <input type="text" name="Age">
+                <label for="WitnessPresent">WitnessPresent :</label>
+                <select name="WitnessPresent">
+                    <option value="">Choose an Option</option>
+                    <option value="Yes">Yes</option>
+                    <option value="No">No</option>
+                </select>
+                <label for="NumberOfSuppliments">NumberOfSuppliments:</label>
+                <select name="NumberOfSuppliments">
+                    <option value="">Choose an Option</option>
+                    <option value="none">none</option>
+                    <option value="1 to 2">1 to 2</option>
+                    <option value="3 to 5">3 to 5</option>
+                    <option value="more than 5">more than 5</option>
+                </select>
+                <label for="NumberOfCars">NumberOfCars:</label>
+                <select name="NumberOfCars">
+                    <option value="">Choose an Option</option>
+                    <option value="1 vehicle">1 vehicle</option>
+                    <option value="2 vehicles">2 vehicles</option>
+                    <option value="3 to 4">3 to 4</option>
+                    <option value="5 to 8">5 to 8</option>
+                    <option value="more than 8">more than 8</option>
+                </select>
+                <label for="Year">Year:</label>
+                <input type="text" name="Year">
+                <label for="BasePolicy">BasePolicy:</label>
+                <select name="BasePolicy">
+                    <option value="">Choose an Option</option>
+                    <option value="Liability">Liability</option>
+                    <option value="All Perils'">All Perils</option>
+                    <option value="Collision">Collision</option>
+                </select>
+            
+
+
+            
+                <!-- Add more fields for the right column -->
+            </div>
+        </div>
+        <div style="position: absolute; right: 720;">
+        <input type="submit" value="Predict">
+    </form>
+    {% if error_message %}
+<div style="color: red;">
+    {{ error_message }}
+</div>
+{% endif %}
+</div>
+</body>
+</html>
+
